@@ -1,0 +1,354 @@
+/* ---------------------------------- */
+/* BASE Y UTILITIES */
+/* ---------------------------------- */
+@font-face {
+  font-family: 'Univers';
+  src: url('../fonts/Universe/Univers-ExtraBlackExt.otf') format('opentype');
+}
+@font-face {
+  font-family: 'PPEiko';
+  src: url('../fonts/pp-eiko/ppeiko-medium.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Nike';
+  src: url('../fonts/Nike/Nike Futura ND.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Universe Extra Black';
+  src: url('../fonts/Universe/Univers-ExtraBlack.otf') format('opentype');
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------------------------------- */
+/* Bloque: page-container */
+/* ---------------------------------- */
+.page-container {
+  background-image: url('../images/fondoTorneo.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  transition: transform 0.4s ease;
+  width: 100%;
+  max-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  scale: 1; /* se agrego */
+  transition: all 0.8s ease; /* se agrego */
+}
+.page-container.open {
+  translate: -15rem 2rem;
+  scale: 0.85;
+  transition: all 0.8s ease;
+}
+
+/* ---------------------------------- */
+/* Bloque: header */
+/* ---------------------------------- */
+.header {
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: transparent;
+}
+
+/* ---------------------------------- */
+/* Bloque: nav */
+/* ---------------------------------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  width: 220px;
+}
+
+.nav__menu--desktop {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.nav__item-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+.header.scrolled .nav__item-row span {
+  color: #acf93a;
+}
+.nav__link {
+  font-family: 'Univers', sans-serif;
+  transition: color 0.3s ease;
+  padding-left: 20px;
+}
+
+.header.scrolled .nav__link {
+  color: #acf93a;
+}
+
+.nav__hamburger-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 3;
+}
+
+.nav__hamburger-line {
+  width: 70px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #000; /* Color inicial negro */
+  transition: background-color 0.3s ease;
+}
+
+.header.scrolled .nav__hamburger-line {
+  background-color: #acf93a;
+}
+
+/* ---------------------------------- */
+/* Bloque: sidebar (menú lateral) */
+/* ---------------------------------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100vh;
+  background-color: #000;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 2rem 1rem;
+}
+
+.sidebar__close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #fff; /* Color blanco para la X */
+}
+
+.sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100dvh;
+  gap: 0.8rem;
+}
+
+.sidebar__link {
+  font-family: 'Universe Extra Black', sans-serif;
+  font-size: 0.9rem;
+  color: #acf93a;
+}
+
+/* ---------------------------------- */
+/* Bloque: hero */
+/* ---------------------------------- */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #050707;
+  text-align: center;
+}
+.hero__image {
+  width: 80px;
+  padding: 10px 0;
+}
+
+.hero__h2 {
+  font-family: 'Universe Extra Black', sans-serif;
+  font-size: clamp(1.7rem, 4vw, 3.5rem);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 1rem;
+}
+
+.hero__p {
+  font-family: 'Univers', sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.2rem);
+  max-width: 600px;
+}
+
+/* ---------------------------------- */
+/* Bloque: team */
+/* ---------------------------------- */
+.team {
+  /* background-color: #000; */
+  color: #acf93a;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.team__cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.team__heading {
+  font-family: 'Universe Extra Black', sans-serif;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  line-height: 35px;
+}
+/* ... otros estilos de dates-grid ... */
+
+.dates-grid__card-link {
+  display: block;
+  overflow: hidden; /* ¡IMPORTANTE! Oculta lo que el pseudo-elemento agrande */
+  border-radius: 8px; /* Un poco de borde redondeado siempre queda bien */
+  text-decoration: none;
+}
+
+.dates-grid__card {
+  /* Ya no necesita el background-image aquí */
+  position: relative; /* Necesario para posicionar el pseudo-elemento y el overlay */
+  z-index: 1; /* Asegura que el contenido de la card esté en un contexto de apilamiento */
+  width: 160px;
+  height: 230px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* LA CAPA DE LA IMAGEN (PSEUDO-ELEMENTO) */
+.dates-grid__card::before {
+  content: ''; /* Los pseudo-elementos siempre necesitan 'content' */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Se coloca DETRÁS del contenido de la card (como el overlay y el título) */
+
+  transition: transform 0.4s ease-out; /* La animación suave para el zoom */
+}
+
+/* EL EFECTO HOVER */
+/* Cuando hacemos hover sobre el LINK, su HIJO .dates-grid__card y el pseudo-elemento ::before de este, se transforman */
+.dates-grid__card-link:hover .dates-grid__card::before {
+  transform: scale(1.1); /* Agranda la capa de la imagen en un 10% */
+}
+
+/* --- Modificadores BEM para asignar las imágenes al PSEUDO-ELEMENTO --- */
+.dates-grid__card--san-miguel::before {
+  background-image: url('../images/torneoSM.jpg');
+}
+
+.dates-grid__card--chorrillos::before {
+  background-image: url('../images/torneoC.jpg');
+}
+
+.team__card-title {
+  font-family: 'Nike', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+/* ---------------------------------- */
+/* Bloque: footer */
+/* ---------------------------------- */
+.footer {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer__logo {
+  max-width: 100%;
+  width: 200px;
+}
+
+/* ---------------------------------- */
+/* MEDIA QUERIES */
+/* ---------------------------------- */
+@media (max-width: 1100px) {
+  .nav__menu--desktop {
+    display: none;
+  }
+
+  .nav__hamburger-button {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .dates-grid__card {
+    width: 500px;
+    height: auto;
+  }
+  .nav {
+    justify-content: space-around;
+  }
+  .page-container {
+    background-position: top;
+    background-size: cover;
+  }
+  .team__cards {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .dates-grid__card {
+    width: 200px;
+    height: 270px;
+  }
+  .hero {
+    height: 100vh;
+    padding: 6rem 0;
+  }
+  .hero__image {
+    width: 100px;
+    padding: 1% 0;
+  }
+  .team {
+    padding: 10rem 10;
+  }
+}

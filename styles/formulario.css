@@ -1,0 +1,545 @@
+/* ---------------------------------- */
+/* BASE Y UTILITIES */
+/* ---------------------------------- */
+@font-face {
+  font-family: 'Univers';
+  src: url('../fonts/Universe/Univers-ExtraBlackExt.otf') format('opentype');
+}
+@font-face {
+  font-family: 'PPEiko';
+  src: url('../fonts/pp-eiko/ppeiko-medium.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Nike';
+  src: url('../fonts/Nike/Nike Futura ND.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Universe Extra Black';
+  src: url('../fonts/Universe/Univers-ExtraBlack.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Universe Black Ext';
+  src: url('../fonts/Universe/Univers-BlackExt.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Universe bold';
+  src: url('../fonts/Universe/Univers-Bold.otf') format('opentype');
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #000;
+  min-height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------------------------------- */
+/* Bloque: page-container */
+/* ---------------------------------- */
+.page-container {
+  background-image: url('../images/fondoFormulario.jpg');
+  background-size: contain;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  scale: 1; /* se agrego */
+  transition: all 0.8s ease; /* se agrego */
+}
+.page-container.open {
+  translate: -15rem -9rem;
+  scale: 0.85;
+  transition: all 0.8s ease;
+}
+/* ---------------------------------- */
+/* Bloque: header */
+/* ---------------------------------- */
+.header {
+  margin-top: 20px;
+  padding: 1rem 2rem;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: black;
+}
+
+/* ---------------------------------- */
+/* Bloque: nav */
+/* ---------------------------------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  width: 150px;
+}
+
+.nav__menu--desktop {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.nav__item-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+.nav__item-row span {
+  color: #acf93a;
+}
+
+.nav__link {
+  font-family: 'Univers', sans-serif;
+  color: #fff;
+  transition: color 0.3s ease;
+  padding-left: 20px;
+}
+
+.nav__hamburger-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 3;
+}
+
+.nav__hamburger-line {
+  width: 70px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #acf93a; /* Color inicial negro */
+  transition: background-color 0.3s ease;
+}
+
+.header.scrolled .nav__hamburger-line {
+  background-color: #acf93a;
+}
+
+/* ---------------------------------- */
+/* Bloque: sidebar (menú lateral) */
+/* ---------------------------------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100vh;
+  background-color: #000;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 2rem 1rem;
+}
+
+.sidebar__close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #fff; /* Color blanco para la X */
+}
+
+.sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100dvh;
+  gap: 0.8rem;
+}
+
+.sidebar__link {
+  font-family: 'Universe Extra Black', sans-serif;
+  font-size: 0.9rem;
+  color: #acf93a;
+}
+
+/* ---------------------------------- */
+/* Bloque: main */
+/* ---------------------------------- */
+
+.hero {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  color: #050707;
+  text-align: center;
+}
+.hero__image-chorrillos {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  margin-top: 30px;
+}
+.hero h1 {
+  font-family: 'Univers', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.hero h2 {
+  font-family: 'Univers', sans-serif;
+  font-size: clamp(1rem, 1vw, 1.6rem);
+  text-transform: uppercase;
+  width: 100%;
+  color: #acf93a;
+  padding: 10px 0;
+  line-height: 1;
+  margin-top: 1rem;
+}
+
+.hero p {
+  font-family: 'PPEiko', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 600px;
+  margin-top: 1.5rem;
+}
+
+/* ---------------------------------- */
+/* Bloque: team */
+/* ---------------------------------- */
+.team {
+  background-color: #000;
+  color: #acf93a;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.team__heading {
+  font-family: 'Univers', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  text-transform: uppercase;
+  line-height: 35px;
+}
+
+.team__subtitle {
+  font-family: 'PPEiko', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-top: 0.5rem;
+  padding: 2.5rem 0;
+}
+
+.team__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.team__card {
+  border: 1px solid #acf93a;
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+}
+
+.team__card-title {
+  font-family: 'Nike', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+/* ---------------------------------- */
+/* Bloque: footer */
+/* ---------------------------------- */
+.footer {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer__logo {
+  max-width: 100%;
+  width: 200px;
+}
+/* ---------------------------------- */
+/* MEDIA QUERIES */
+/* ---------------------------------- */
+@media (max-width: 1100px) {
+  .nav__menu--desktop {
+    display: none;
+  }
+
+  .nav__hamburger-button {
+    display: flex;
+  }
+}
+.form-container {
+  /* Color de fondo del contenedor del formulario */
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c4f638; /* Color del borde */
+  background-color: transparent;
+  color: white; /* Color del texto del input */
+  font-size: 1.1em;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  font-family: 'PPEiko', sans-serif;
+}
+
+input::placeholder {
+  color: white; /* Color del texto del placeholder */
+  opacity: 0.7; /* Opacidad para que se vea más tenue */
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #c4f638;
+}
+
+/* Estilo específico para el input de fecha y el icono */
+.form-group.date-input-container input[type='date'] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative; /* Oculta el texto por defecto */
+}
+
+/* Cambiar el color el icono del calendario */
+.form-group.date-input-container
+  input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Invierte el color para que sea blanco */
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*Quitar el dd/mm/aa y ponerle como placeholde Fecha de Nacimiento y al darle click este dd/mm/aa no se muestre*/
+.form-group.date-input-container input[type='date'] {
+  color: #cecece; /* Oculta el texto por defecto */
+}
+.form-group.date-input-container
+  input[type='date']:focus::-webkit-datetime-edit {
+  color: white; /* Muestra el texto cuando el usuario lo enfoca */
+}
+.form-group.date-input-container input[type='date']:valid,
+.form-group.date-input-container input[type='date']:focus {
+  color: white; /* Muestra el texto cuando el usuario lo enfoca o ingresa un valor válido */
+}
+
+/* Placeholder simulado */
+.form-group.date-input-container::before {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 1.3em;
+  color: white;
+  opacity: 0.7;
+  pointer-events: none; /* No interfiere con el clic del usuario */
+  transition: opacity 0.2s ease;
+}
+.form-group.date-input-container::before :active {
+  color: transparent;
+}
+.form-group {
+  position: relative;
+  margin-bottom: 15px;
+  display: flex; /* Esto coloca los elementos en fila */
+  align-items: center; /* Esto los centra verticalmente */
+}
+.form-group label {
+  color: white; /* Color del texto del label */
+  font-size: 1.2rem;
+  margin-left: 10px; /* Espacio entre el checkbox y el texto */
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#acepto {
+  width: auto;
+}
+.checkbox-label {
+  font-size: 1rem;
+}
+.btn-form {
+  color: #000;
+  background-color: #acf93a;
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  font-family: 'Universe Black Ext', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.span-form {
+  display: inline-block;
+  margin: 15px 0;
+  color: #fff;
+  font-family: 'PPEiko', sans-serif;
+  font-size: 0.9rem;
+}
+.edad-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+}
+.edad-container span {
+  font-size: 2rem;
+}
+.edad-container button {
+  padding: 5px 10px;
+  font-family: 'Universe bold', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.hero__h3 {
+  font-family: 'Universe Black Ext', sans-serif;
+  text-align: center;
+  color: #acf93a;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+.hero__h4 {
+  color: #c4f638;
+  font-family: 'Univers', sans-serif;
+  text-align: center;
+  line-height: 20px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+.hero__h5 {
+  padding: 15px 0;
+  color: #c4f638;
+  font-family: 'Univers', sans-serif;
+  text-align: center;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+.acepto-container {
+  width: 100%;
+  padding: 20px;
+}
+.image-chorrillos {
+  display: none;
+}
+.hero__h3-SM {
+  font-family: 'Universe Black Ext', sans-serif;
+  text-align: center;
+  color: #acf93a;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+/* Es necesario agregar la clase date-input-container al div del HTML para que funcione */
+@media (min-width: 950px) {
+  .nav {
+    justify-content: space-around;
+  }
+  .page-container {
+    background-position: center;
+    background-size: cover;
+  }
+  .team__cards {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .hero {
+    height: 100%;
+    padding: 1rem 0;
+  }
+  .hero__image-chorrillos {
+    width: 60%;
+  }
+  .nav__link {
+    color: #acf93a;
+  }
+  .hero__title {
+    text-align: start;
+  }
+  .main_form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  .form-section {
+    width: 500px;
+    height: 450px;
+    overflow-y: scroll;
+  }
+  .form-section::-webkit-scrollbar {
+    width: 15px; /* Ancho del scrollbar */
+    background-color: transparent;
+  }
+  .form-section::-webkit-scrollbar-track {
+    background: transparent; /* Color del track del scrollbar */
+    border: 1px solid #acf93a;
+    border-radius: 0;
+  }
+  .form-section::-webkit-scrollbar-thumb {
+    background-color: #acf93a; /* Color del thumb del scrollbar */
+    border-radius: 5px; /* Borde alrededor del thumb */
+    border: 4px solid transparent; /* Espacio entre el thumb y el track */
+    background-clip: padding-box;
+  }
+  .container-principal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-chorrillos {
+    width: 24%;
+  }
+  .hero__image-chorrillos {
+    display: none;
+  }
+  .acepto-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-chorrillos {
+    display: flex;
+  }
+}

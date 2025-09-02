@@ -1,0 +1,355 @@
+/* ================================================== */
+/* FUENTES                                             */
+/* ================================================== */
+@font-face {
+  font-family: 'Univers';
+  src: url('../fonts/Universe/Univers-ExtraBlackExt.otf') format('opentype');
+}
+@font-face {
+  font-family: 'PPEiko';
+  src: url('../fonts/pp-eiko/ppeiko-medium.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Nike';
+  src: url('../fonts/Nike/Nike Futura ND.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Universe Extra Black';
+  src: url('../fonts/Universe/Univers-ExtraBlack.otf') format('opentype');
+}
+
+/* ================================================== */
+/* RESETEO & UTILIDADES                               */
+/* ================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================================================== */
+/* PAGE CONTAINER                                     */
+/* ================================================== */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100vh;
+  position: relative;
+  background-image: url('../images/fondo.jpg');
+  background-size: cover;
+  background-position: top;
+  scale: 1; /* se agrego */
+  transition: all 0.8s ease; /* se agrego */
+}
+.page-container.open {
+  translate: -15rem 2rem;
+  scale: 0.85;
+  transition: all 0.8s ease;
+}
+
+/* ================================================== */
+/* HEADER & NAVBAR                                    */
+/* ================================================== */
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.header.scrolled {
+  background-color: #000;
+  transition: background-color 0.4s ease;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  width: 230px;
+}
+
+.nav__menu--desktop {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav__link {
+  font-family: 'Univers', sans-serif;
+  transition: color 0.3s ease;
+  padding-left: 20px;
+}
+.nav__link-item {
+  font-family: sans-serif;
+  transition: color 0.3s ease;
+  font-size: 1.2rem;
+}
+.nav__item-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+.header.scrolled .nav__item-row span {
+  color: #acf93a;
+}
+.header.scrolled .nav__link-item {
+  color: #acf93a;
+}
+
+.header.scrolled .nav__link {
+  color: #acf93a;
+}
+
+/* Botón Hamburguesa */
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 3;
+}
+
+.nav__hamburger-line {
+  width: 70px;
+  height: 8px;
+  border-radius: 10px;
+  background-color: #000;
+  transition: background-color 0.3s ease;
+}
+
+.header.scrolled .nav__hamburger-line {
+  background-color: #acf93a;
+}
+
+/* ================================================== */
+/* SIDEBAR (Menú lateral móvil)                       */
+/* ================================================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100vh;
+  padding: 2rem 1rem;
+  background-color: #000;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 100dvh;
+  gap: 0.8rem;
+}
+
+.sidebar__link {
+  font-family: 'Universe Extra Black', sans-serif;
+  font-size: 0.9rem;
+  color: #acf93a;
+}
+
+/* ================================================== */
+/* HERO                                               */
+/* ================================================== */
+.hero {
+  /* flex-grow: 1;
+  padding: 120px 20px 20px 20px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #050707;
+  padding-top: 4rem;
+  height: 35vh;
+}
+
+.hero__title {
+  font-family: 'Universe Extra Black', sans-serif;
+  font-size: clamp(1.8rem, 5vw, 4rem);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.hero__description {
+  font-size: clamp(1.2rem, 2vw, 1.3rem);
+  line-height: 1.2;
+}
+/* ================================================== */
+/* TEAM                                               */
+/* ================================================== */
+.team {
+  height: 70vh;
+  padding: 100px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #acf93a;
+  background-image: url('../images/fondo4-mobile.jpg');
+  background-size: cover;
+  background-position: top;
+}
+
+.team__heading {
+  width: 90%;
+  background-image: url('../images/inscribe-equipo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+}
+
+.team__subtitle {
+  font-family: 'Universe Extra Black', sans-serif;
+  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  padding: 2.5rem 0;
+  text-transform: uppercase;
+}
+
+.team__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.team__card {
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  border: 1px solid #acf93a;
+}
+
+.team__card-title {
+  font-family: 'Nike', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+/* ================================================== */
+/* FOOTER                                             */
+/* ================================================== */
+.footer {
+  padding: 10px;
+  background-color: #acf93a;
+  text-align: center;
+}
+
+.footer__logo {
+  max-width: 100%;
+  width: 200px;
+}
+
+/* ================================================== */
+/* MEDIA QUERIES                                      */
+/* ================================================== */
+
+@media (max-width: 1100px) {
+  .nav__menu--desktop {
+    display: none;
+  }
+  .nav__hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 470px) {
+  .team__heading {
+    background-image: url('../images/inscribe-equipo.png');
+    min-height: 85px;
+    background-size: contain;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav {
+    justify-content: space-around;
+  }
+  .hero {
+    background-image: url('../images/fondoqueesToma.jpg');
+    background-size: cover;
+    background-position: bottom;
+    height: 50vh;
+  }
+  .hero__image {
+    width: 40%;
+    padding: 10px 0;
+  }
+  .hero__description {
+    width: 35%;
+  }
+  .hero__title {
+    max-width: 1700px;
+    padding: 0 20rem;
+  }
+
+  .team__heading {
+    width: 100%;
+    background-image: url('../images/inscribe-equipo-desktop.png');
+    background-size: contain;
+    min-height: 120px; /* más espacio en móvil */
+    padding: 0 15px;
+  }
+  .team {
+    background-image: url('../images/fondoqueesToma2.jpg');
+    height: 90vh;
+    padding-top: 12rem;
+  }
+  .team__heading {
+    width: 700px;
+  }
+  .team__card {
+    padding: 10px 30px;
+  }
+  .team__card-title {
+    line-height: 30px;
+  }
+}

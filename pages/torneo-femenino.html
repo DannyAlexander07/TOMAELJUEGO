@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+    <title>Torneo Femenino 3 vs 3 | Toma el Juego. Haz las Reglas.</title>
+    <meta
+      name="description"
+      content="Inscríbete en el torneo de fútbol callejero 3 vs 3 femenino, una experiencia única que fusiona deporte, estilo y cultura. ¡Exclusivo para jóvenes de 15 a 21 años!"
+    />
+    <link rel="stylesheet" href="../styles/torneo.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=keyboard_arrow_down"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" data-state="closed">
+      <button class="sidebar__close-button" aria-label="Cerrar menú">
+        &times;
+      </button>
+      <ul class="sidebar__menu">
+        <li>
+          <a href="../pages/queEsToma.html" class="sidebar__link"
+            >¿QUÉ ES TOMA?</a
+          >
+        </li>
+        <li>
+          <a href="./torneo-masculino.html" class="sidebar__link">MASCULINO</a>
+        </li>
+        <li>
+          <a href="./torneo-femenino.html" class="sidebar__link">FEMENINO</a>
+        </li>
+        <li>
+          <a href="./reglas.html" class="sidebar__link">EL JUEGO</a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="../images/LogoSolo.png" alt="Logo" width="100"
+          /></a>
+        </li>
+      </ul>
+    </aside>
+    <div class="page-container">
+      <!-- HEADER -->
+      <header class="header">
+        <nav class="nav">
+          <a href="../index.html" class="nav__logo" aria-label="Inicio">
+            <img
+              id="logo"
+              src="../images/logoPrincipalNegro.png"
+              alt="Logo Toma el Juego"
+              width="200"
+            />
+          </a>
+
+          <ul class="nav__menu nav__menu--desktop">
+            <li>
+              <a href="../pages/queEsToma.html" class="nav__link"
+                >¿QUÉ ES TOMA?</a
+              >
+            </li>
+            <li class="nav__link">|</li>
+            <li>
+              <a href="./torneo-masculino.html" class="nav__link">MASCULINO</a>
+            </li>
+            <li class="nav__link">|</li>
+            <li class="nav__item-row">
+              <a href="./torneo-femenino.html" class="nav__link">FEMENINO</a>
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </li>
+            <li class="nav__link">|</li>
+            <li>
+              <a href="./reglas.html" class="nav__link">EL JUEGO</a>
+            </li>
+          </ul>
+
+          <button class="nav__hamburger-button" aria-label="Abrir menú">
+            <span class="nav__hamburger-line"></span>
+            <span class="nav__hamburger-line"></span>
+            <span class="nav__hamburger-line"></span>
+          </button>
+        </nav>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero">
+        <h2 class="hero__h2">torneo femenino</h2>
+        <img
+          src="../images/3v3.png"
+          alt="Fútbol 3v3 Femenino"
+          class="hero__image"
+        />
+      </section>
+
+      <!-- TEAM -->
+      <section class="team">
+        <h2 class="team__heading">elige una de estas CANCHAS</h2>
+        <div class="team__cards">
+          <a href="./formularioChorrillosF.html" class="dates-grid__card-link">
+            <article
+              class="dates-grid__card dates-grid__card--chorrillos"
+            ></article>
+          </a>
+          <a href="./formularioSanMiguelF.html" class="dates-grid__card-link">
+            <article
+              class="dates-grid__card dates-grid__card--san-miguel"
+            ></article>
+          </a>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <img
+          src="../images/logoNike.svg"
+          alt="Logo Nike"
+          class="footer__logo"
+          width="200"
+        />
+      </footer>
+    </div>
+
+    <script src="../scripts/torneo-menu.js"></script>
+  </body>
+</html>
