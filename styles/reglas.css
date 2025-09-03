@@ -252,6 +252,25 @@ a {
   line-height: 20px;
 }
 
+
+.documentos li a {
+  /* ¡Aquí está la magia! Movemos todos los estilos al enlace */
+  display: block;  /* <-- ESTA LÍNEA HACE QUE EL ENLACE OCUPE TODA LA CAJA */
+  background-color: #000;
+  color: #acf93a;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-family: 'Univers', sans-serif;
+  padding: 7px 20px;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  text-align: start; /* Centra el texto dentro de la caja */
+}
+
+/* (Opcional) Un efecto visual cuando pasas el mouse */
+.documentos li a:hover {
+  background-color: #333; /* Un gris oscuro para el efecto hover */
+}
+
 /* ---------------------------------- */
 /* Bloque: footer */
 /* ---------------------------------- */
@@ -416,4 +435,22 @@ li {
   .contenedor-principal .content-2 {
     width: 40%;
   }
+
+  .documentos li a {
+  /* ¡Aquí está la magia! Movemos todos los estilos al enlace */
+  display: block;  /* <-- ESTA LÍNEA HACE QUE EL ENLACE OCUPE TODA LA CAJA */
+  background-color: #000;
+  color: #acf93a;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-family: 'Univers', sans-serif;
+  padding: 7px 20px;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  text-align: start; /* Centra el texto dentro de la caja */
+}
+
+/* (Opcional) Un efecto visual cuando pasas el mouse */
+.documentos li a:hover {
+  background-color: #333; /* Un gris oscuro para el efecto hover */
+}
 }
