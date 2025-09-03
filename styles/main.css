@@ -1,3 +1,4 @@
+/*Archivo: styles/main*/
 /* ================================================== */
 /* FUENTES                                             */
 /* ================================================== */
@@ -245,7 +246,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70px;
+  height: 90px;
 }
 
 .team__subtitle {
@@ -256,11 +257,13 @@ a {
 }
 
 .team__cards {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   padding: 20px 0;
+  column-gap: 5rem;
 }
 
 .team__card {
@@ -353,6 +356,17 @@ a {
     height: 100vh;
     padding-top: 12rem;
   }
+
+  .team__cards {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    column-gap: 15rem;
+  }
+
   .team__heading {
     width: 700px;
   }

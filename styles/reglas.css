@@ -1,3 +1,4 @@
+/*Archivo: styles/reglas*/
 /* ---------------------------------- */
 /* BASE Y UTILITIES */
 /* ---------------------------------- */
@@ -353,19 +354,29 @@ li {
   padding-left: 2.5rem;
   list-style: disc;
 }
-.documentos {
-  padding: 10px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+/* --- CÓDIGO CORREGIDO --- */
+
 .documentos li {
+  /* Dejamos el li casi sin estilos */
+  list-style-type: none; /* Asegura que no haya puntos de lista */
+}
+
+.documentos li a {
+  /* ¡Aquí está la magia! Movemos todos los estilos al enlace */
+  display: block;  /* <-- ESTA LÍNEA HACE QUE EL ENLACE OCUPE TODA LA CAJA */
   background-color: #000;
   color: #acf93a;
   border-radius: 30px;
   text-transform: uppercase;
   font-family: 'Univers', sans-serif;
   padding: 7px 20px;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  text-align: start; /* Centra el texto dentro de la caja */
+}
+
+/* (Opcional) Un efecto visual cuando pasas el mouse */
+.documentos li a:hover {
+  background-color: #333; /* Un gris oscuro para el efecto hover */
 }
 
 /* Es necesario agregar la clase date-input-container al div del HTML para que funcione */

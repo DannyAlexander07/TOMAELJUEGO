@@ -1,37 +1,34 @@
+// scripts/queesToma.js
 document.addEventListener("DOMContentLoaded", () => {
-  // Elementos DOM
   const hamburgerButton = document.querySelector(".nav__hamburger"); // antes .nav__hamburger-button
   const closeButton = document.querySelector(".sidebar__close"); // antes .sidebar__close-button
-  const sidebar = document.querySelector(".sidebar");
   const pageContainer = document.querySelector(".page-container");
   const header = document.querySelector(".header");
   const logo = document.getElementById("logo");
 
-  const navLinks = document.querySelectorAll(".nav__link");
-  const hamburgerLines = document.querySelectorAll(".nav__hamburger-line");
+  // Simplificar la gestión del menú
+  const toggleMenu = () => {
+    pageContainer.classList.toggle("open");
+  };
 
-  hamburgerButton.addEventListener("click", () => {
-    pageContainer.classList.add("open");
-  });
-  closeButton.addEventListener("click", () => {
-    pageContainer.classList.remove("open");
-  });
+  hamburgerButton.addEventListener("click", toggleMenu);
+  closeButton.addEventListener("click", toggleMenu);
 
-  // Sticky header + swap del logo al hacer scroll
+  // Sticky header + swap logo
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       header.classList.add("scrolled");
-      if (logo) logo.src = "../images/logoPrincipalVerde.png";
+      logo.src = "../images/logoPrincipalVerde.png";
     } else {
       header.classList.remove("scrolled");
-      if (logo) logo.src = "../images/logoPrincipalNegro.png";
+      logo.src = "../images/logoPrincipalNegro.png";
     }
   });
 
-  // Cierra el menú si se pasa a escritorio (>768px)
+  // Cerrar el menú si se redimensiona a escritorio
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 768 && isMenuOpen) {
-      closeMenu();
+    if (window.innerWidth > 768 && pageContainer.classList.contains("open")) {
+      pageContainer.classList.remove("open");
     }
   });
 });

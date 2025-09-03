@@ -1,3 +1,4 @@
+/*Archivo: styles/formulario*/
 /* ---------------------------------- */
 /* BASE Y UTILITIES */
 /* ---------------------------------- */
@@ -423,12 +424,30 @@ input:focus {
 .edad-container span {
   font-size: 2rem;
 }
-.edad-container button {
+/* Reemplaza la regla .edad-container button CON ESTA: */
+.edad-container a.btn-descarga {
+  /* Estilos que ya tenías: */
   padding: 5px 10px;
   font-family: 'Universe bold', sans-serif;
   font-size: 0.8rem;
   text-transform: uppercase;
+  
+  /* Estilos añadidos para que parezca un botón y no un link: */
+  text-decoration: none; /* Quita el subrayado */
+  color: #fff;            /* Color del texto */
+  background: none;        /* Sin fondo */
+  border: 1px solid #fff;  /* Borde blanco para que sea visible */
+  border-radius: 5px;      /* Bordes ligeramente redondeados */
+  cursor: pointer;         /* Muestra la manito al pasar el mouse */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
 }
+
+/* (Opcional) Un efecto visual cuando pasas el mouse */
+.edad-container a.btn-descarga:hover {
+  background-color: #fff; /* El fondo se vuelve blanco */
+  color: #000;            /* El texto se vuelve negro */
+}
+
 .hero__h3 {
   font-family: 'Universe Black Ext', sans-serif;
   text-align: center;
@@ -542,4 +561,27 @@ input:focus {
   .image-chorrillos {
     display: flex;
   }
+
+  .edad-container a.btn-descarga {
+  /* Estilos que ya tenías: */
+  padding: 5px 10px;
+  font-family: 'Universe bold', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  
+  /* Estilos añadidos para que parezca un botón y no un link: */
+  text-decoration: none; /* Quita el subrayado */
+  color: #fff;            /* Color del texto */
+  background: none;        /* Sin fondo */
+  border: 1px solid #fff;  /* Borde blanco para que sea visible */
+  border-radius: 5px;      /* Bordes ligeramente redondeados */
+  cursor: pointer;         /* Muestra la manito al pasar el mouse */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* (Opcional) Un efecto visual cuando pasas el mouse */
+.edad-container a.btn-descarga:hover {
+  background-color: #fff; /* El fondo se vuelve blanco */
+  color: #000;            /* El texto se vuelve negro */
+}
 }
