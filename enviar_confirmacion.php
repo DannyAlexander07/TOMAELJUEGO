@@ -69,7 +69,6 @@ imagedestroy($imagen);
 $mensaje = "
 <html><body>
   <p>Hola " . htmlspecialchars($nombreCapitan) . ", gracias por registrarte.</p>
-  <p>Si no puedes ver la imagen de confirmación abajo, por favor activa la opción 'Mostrar imágenes' en tu correo.</p>
   <img src='" . $urlImagenGenerada . "' alt='Confirmación de Registro'>
 </body></html>
 ";
