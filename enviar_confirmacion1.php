@@ -1,6 +1,6 @@
 <?php
 // Archivo: enviar_confirmacion.php - Versión con CENTRADO AUTOMÁTICO
-
+die("ESTOY EJECUTANDO LA VERSIÓN MÁS NUEVA DEL ARCHIVO - " . date('H:i:s'));
 header('Content-Type: application/json');
 
 $data = json_decode(file_get_contents('php://input'), true);
