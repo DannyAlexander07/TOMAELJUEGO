@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log('Notificación para el organizador enviada (vía Formspree).');
                 
                 // 2. Envío a tu script PHP (para la confirmación del capitán)
-                return fetch('/enviar_confirmacion.php', {
+                return fetch('/enviar_confirmacion1.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
