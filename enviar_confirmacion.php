@@ -17,7 +17,8 @@ $asunto = '¡Registro Exitoso en TOMA EL JUEGO!';
 
 // Rutas en el servidor
 $rutaImagenBase = __DIR__ . '/email_assets/emaildeconfirmacion_VF.png';
-$rutaFuente = __DIR__ . '/email_assets/fuente.ttf'; // Asegúrate de que el nombre del archivo de fuente sea correcto
+// Usaremos la fuente ExtraBlack de la carpeta Universe para que se vea potente
+$rutaFuente = __DIR__ . '/fonts/Universe/Univers-Black.otf'; // <-- LÍNEA CORREGIDA
 $directorioSalida = __DIR__ . '/email_assets/generadas/';
 
 // URL pública para el correo
